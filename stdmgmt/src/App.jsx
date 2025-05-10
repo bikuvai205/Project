@@ -1,19 +1,17 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import LoginPage from "./pages/LoginPage";
+
+
 function App() {
- return (
-    <>
-      <h1>
-        <span className="text-3xl font-bold underline">
-          Hello world!
-        </span>
-      </h1>
-      <h1>
-        <span className="text-3xl font-bold underline">
-          Hello world!
-        </span>
-      </h1>
-    </>
-  )
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
